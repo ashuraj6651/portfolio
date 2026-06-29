@@ -51,8 +51,21 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
             z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+        }
+        /* Show the sound button only when hovering its video container */
+        .video-wrapper:hover .sound-btn,
+        .relative:hover > .sound-btn {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* Keep it visible while active/unmuted, even without hover */
+        .sound-btn.active {
+            opacity: 1;
+            pointer-events: auto;
         }
         .sound-btn svg { width: 17px; height: 17px; transition: transform 0.2s ease; }
         .sound-btn:hover { transform: scale(1.1); background: rgba(249,115,22,0.85); border-color: rgba(249,115,22,0.6); box-shadow: 0 8px 24px rgba(249,115,22,0.35); }
