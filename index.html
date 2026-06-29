@@ -12,7 +12,7 @@
         ::selection { background: #F97316; color: #FFFFFF; }
         html { scroll-behavior: smooth; }
         body { background: #000; color: #fff; }
-
+        
         @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -71,6 +71,16 @@
                               linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+        
+
+        .work-card:hover{
+
+        transform:translateY(-8px);
+
+        box-shadow:
+        0 0 60px rgba(255,115,0,.18);
+
+        }
         .glass-card {
             background: rgba(23,23,23,0.5);
             backdrop-filter: blur(12px);
@@ -90,18 +100,34 @@
             animation: scroll-marquee 30s linear infinite;
         }
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
         }
-        .video-wrapper iframe {
+
+        .video-wrapper iframe,
+        .video-wrapper::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:linear-gradient(to top,
+        rgba(0,0,0,.10),
+        rgba(0,0,0,.05),
+         rgba(0,0,0,.10));
+        pointer-events:none;
+        }   
+        .video-wrapper video {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: 0;
             border-radius: 12px;
+            object-fit: cover;
+            display: block;
         }
         .skill-bar {
             background: linear-gradient(90deg, #F97316, #FB923C);
@@ -175,6 +201,9 @@
         .mobile-menu.open {
             transform: translateX(0);
         }
+        
+        
+    
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -259,6 +288,9 @@
         </div>
     </section>
 
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
     <!-- ==================== MARQUEE ==================== -->
     <div class="border-y border-white/5 py-4 overflow-hidden">
         <div class="flex whitespace-nowrap marquee-track">
@@ -289,11 +321,11 @@
                 <!-- Image -->
                 <div class="relative scroll-reveal">
                     <div class="rounded-2xl overflow-hidden border border-white/10">
-                        <img src="https://picsum.photos/seed/editor-portrait/600/750.jpg" alt="Profile" class="w-full h-auto object-cover">
+                        <img src="assets/images/pfo.png" alt="Profile" class="w-full h-auto object-cover">
                     </div>
                     <!-- Floating badge -->
                     <div class="absolute -bottom-6 -right-6 glass-card rounded-2xl p-5 animate-float">
-                        <div class="text-3xl font-semibold text-orange-500">5+</div>
+                        <div class="text-3xl font-semibold text-orange-500">3+</div>
                         <div class="text-xs text-neutral-400 mt-1">Years of<br>Experience</div>
                     </div>
                     <!-- Orange glow -->
@@ -304,30 +336,14 @@
                 <div class="scroll-reveal">
                     <span class="text-xs font-medium text-orange-500 uppercase tracking-widest mb-4 block">About Me</span>
                     <h2 class="text-4xl md:text-5xl font-medium tracking-tighter text-gradient mb-6">
-                        Turning raw footage into visual art
+                        Editing Stories That Leave an Impact
                     </h2>
                     <p class="text-neutral-400 font-light leading-relaxed text-lg mb-6">
-                        I'm a passionate video editor with over 5 years of experience in crafting compelling visual stories. I specialize in narrative editing, commercial content, music videos, and YouTube content.
-                    </p>
+                        Hi, I'm <span class="text-white font-medium">Ashu Raj</span>, a professional Video Editor specializing in YouTube content, short-form videos, commercials, podcasts, and motion graphics. I focus on creating visually engaging edits that maximize audience retention while delivering a clean, cinematic, and high-quality viewing experience.                    </p>
                     <p class="text-neutral-500 font-light leading-relaxed mb-8">
-                        My approach combines technical precision with creative storytelling. I believe every frame matters, every transition should feel intentional, and every project deserves to stand out. From color grading to sound design, I handle the complete post-production pipeline.
-                    </p>
+                    With expertise in Adobe Premiere Pro, After Effects, DaVinci Resolve, and AI-powered editing workflows, I help creators and brands transform raw footage into compelling stories. Every project is approached with attention to detail, creative storytelling, and a commitment to delivering polished results on time.                    </p>
                     
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-6 mb-8">
-                        <div class="text-center p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                            <div class="text-2xl md:text-3xl font-semibold text-white">150+</div>
-                            <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Projects</div>
-                        </div>
-                        <div class="text-center p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                            <div class="text-2xl md:text-3xl font-semibold text-white">50+</div>
-                            <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Clients</div>
-                        </div>
-                        <div class="text-center p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                            <div class="text-2xl md:text-3xl font-semibold text-white">10M+</div>
-                            <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Views</div>
-                        </div>
-                    </div>
+                    <!-- Stats --> <div class="grid grid-cols-3 gap-6 mb-8"> <div class="text-center p-4 rounded-xl border border-white/5 bg-white/[0.02]"> <div class="text-2xl md:text-3xl font-semibold text-white">100+</div> <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider"> Projects </div> </div> <div class="text-center p-4 rounded-xl border border-white/5 bg-white/[0.02]"> <div class="text-2xl md:text-3xl font-semibold text-white">20+</div> <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider"> Clients </div> </div> <div class="text-center p-4 rounded-xl border border-white/5 bg-white/[0.02]"> <div class="text-2xl md:text-3xl font-semibold text-white">3+</div> <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider"> Years Experience </div> </div> </div>
 
                     <a href="#work" class="inline-flex items-center gap-2 text-orange-500 text-sm font-medium hover:gap-3 transition-all">
                         See my work <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -355,15 +371,38 @@
                 =============================================
             -->
             <div class="scroll-reveal max-w-5xl mx-auto mb-16">
-                <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style="box-shadow: 0 25px 50px -12px rgba(124,45,18,0.15);">
-                    <div class="video-wrapper">
-            <iframe
-                src="https://player.vimeo.com/video/1205337898?autoplay=1&muted=1&loop=1&autopause=0&title=0&byline=0&portrait=0"
-                 frameborder="0"
-                 allow="autoplay; fullscreen; picture-in-picture"
-                 allowfullscreen>
-            </iframe>
+
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                style="box-shadow:0 25px 50px -12px rgba(124,45,18,0.15);">
+
+                <div class="video-wrapper">
+
+                    <div class="scroll-reveal max-w-5xl mx-auto mb-16">
+
+            <div class="video-wrapper">
+
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto">
+
+                <source src="assets/videos/hero.mp4" type="video/mp4">
+
+            </video>
+
+        </div>
+
+            </div>
+        </div>
+</div>
+
                 </div>
+
+                </div>
+
+            </div>
                     
                 </div>
                 <!-- <p class="text-center text-neutral-500 text-sm mt-4">
@@ -378,13 +417,17 @@
     <!-- Horizontal 1 -->
     <div class="work-card rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02]">
         <div class="relative aspect-video">
-            <iframe
-                src="https://player.vimeo.com/video/1205338532?background=1&autoplay=1&loop=1&muted=1"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+        <video
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata">
+
+            <source src="assets/videos/cinematic.mp4" type="video/mp4">
+
+        </video>
         </div>
         <div class="p-5">
             <h3 class="text-lg font-medium text-white">Cinematic Edit</h3>
@@ -397,14 +440,17 @@
     <!-- Horizontal 2 -->
     <div class="work-card rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02]">
         <div class="relative aspect-video">
-            <iframe
-                
-                src="https://player.vimeo.com/video/1205340581?background=1&autoplay=1&loop=1&muted=1"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <video
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata">
+
+            <source src="assets/videos/commercial.mp4" type="video/mp4">
+
+        </video>
         </div>
         <div class="p-5">
             <h3 class="text-lg font-medium text-white">Commercial Edit</h3>
@@ -423,13 +469,18 @@
     <!-- Reel 1 -->
     <div class="work-card w-full max-w-[250px] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300">
         <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:9/16;">
-            <iframe
-                src="https://player.vimeo.com/video/1205342051?background=1&autoplay=1&loop=1&muted=1"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+                <video
+                    class="absolute inset-0 w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source src="assets/videos/reel1.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
         </div>
         <div class="p-5">
             <h3 class="text-lg font-medium text-white">Commercial Edit</h3>
@@ -442,13 +493,18 @@
     <!-- Reel 2 -->
     <div class="work-card w-full max-w-[250px] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300">
         <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:9/16;">
-            <iframe
-                src="https://player.vimeo.com/video/1205340162?background=1&autoplay=1&loop=1&muted=1"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <video
+                    class="absolute inset-0 w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source src="assets/videos/reel2.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
         </div>
         <div class="p-5">
             <h3 class="text-lg font-medium text-white">Commercial Edit</h3>
@@ -461,13 +517,18 @@
     <!-- Reel 3 -->
     <div class="work-card w-full max-w-[250px] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300">
         <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:9/16;">
-            <iframe
-                src="https://player.vimeo.com/video/1205341236?background=1&autoplay=1&loop=1&muted=1"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <video
+                    class="absolute inset-0 w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source src="assets/videos/reel3.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
         </div>
         <div class="p-5">
             <h3 class="text-lg font-medium text-white">Commercial Edit</h3>
@@ -480,13 +541,18 @@
     <!-- Reel 4 -->
     <div class="work-card w-full max-w-[250px] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300">
         <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:9/16;">
-            <iframe
-                src="https://player.vimeo.com/video/1205340370?background=1&autoplay=1&loop=1&muted=1"
-                class="absolute inset-0 w-full h-full"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <video
+                    class="absolute inset-0 w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source src="assets/videos/reel4.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
         </div>
         <div class="p-5">
             <h3 class="text-lg font-medium text-white">Commercial Edit</h3>
@@ -805,7 +871,7 @@
                         projects, technical skills and portfolio.
                     </p>
 
-                    <a href="https://drive.google.com/uc?export=download&id=15OYYziLEw622Coj0vcSzbfF47wqJysUh"
+                    <a href="https://drive.google.com/file/d/1C7fuRy9B3Y-1dKcBN5qnjxZI24AI_GJG/view?usp=sharing"
                        target="_blank"
                        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
 
